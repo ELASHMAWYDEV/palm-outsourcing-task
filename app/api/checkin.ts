@@ -19,6 +19,7 @@ export const checkInService = {
       });
       return response.data.data;
     } catch (error) {
+      // eslint-disable-next-line import/no-named-as-default-member
       if (axios.isAxiosError(error)) {
         const message = error.response?.data?.message || error.message;
         throw new Error(message);
@@ -32,9 +33,11 @@ export const checkInService = {
       const response = await axios.get(`${API_BASE_URL}/check-in/today`);
       return response.data.data;
     } catch (error) {
+      // eslint-disable-next-line import/no-named-as-default-member
       if (axios.isAxiosError(error) && error.response?.status === 404) {
         return null;
       }
+      // eslint-disable-next-line import/no-named-as-default-member
       if (axios.isAxiosError(error)) {
         const message = error.response?.data?.message || error.message;
         throw new Error(message);
@@ -55,6 +58,7 @@ export const checkInService = {
       });
       return response.data;
     } catch (error) {
+      // eslint-disable-next-line import/no-named-as-default-member
       if (axios.isAxiosError(error)) {
         const message = error.response?.data?.message || error.message;
         throw new Error(message);
