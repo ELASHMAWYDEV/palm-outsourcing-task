@@ -22,8 +22,8 @@ export async function getSuggestions({
     throw new Error("OPENROUTER_API_KEY environment variable is required");
   }
 
-  const prompt = `Based on an energy level of ${energyLevel}/10 and mood: "${mood}", provide 5 helpful suggestions for improving wellbeing. Return only a JSON array of strings, no additional text:
-["suggestion 1", "suggestion 2", "suggestion 3", "suggestion 4", "suggestion 5"]`;
+  const prompt = `Based on an energy level of ${energyLevel}/10 and mood: "${mood}", provide 5 helpful suggestions for improving wellbeing. Return only a JSON array like this:
+["suggestion 1","suggestion 2","suggestion 3","suggestion 4","suggestion 5"] no extra text or formatting`;
 
   try {
     const response = await fetch("https://openrouter.ai/api/v1/completions", {
